@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>You Do Not Need to Become Rigid to Change Your Life | Soft Structure</title>
+  <meta
+    name="description"
+    content="A Soft Structure journal entry about routines, growth, self-respect, and building a life that feels better to live."
+  />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #fffaf6;
+      --card: rgba(255,255,255,0.88);
+      --sage: #9caf9a;
+      --sage-dark: #617565;
+      --peach: #f4c6b5;
+      --text: #2f312e;
+      --muted: #6d6f68;
+      --border: rgba(47,49,46,0.08);
+      --shadow: 0 16px 40px rgba(52,58,50,0.08);
+      --radius: 24px;
+      --max-width: 860px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background: linear-gradient(180deg, #fffaf6 0%, #fff8f5 100%);
+      color: var(--text);
+      line-height: 1.75;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      width: min(calc(100% - 2rem), var(--max-width));
+      margin: 0 auto;
+    }
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      backdrop-filter: blur(14px);
+      background: rgba(255, 250, 246, 0.82);
+      border-bottom: 1px solid rgba(47,49,46,0.06);
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      padding: 1rem 0;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+    }
+
+    .brand-mark {
+      width: 42px;
+      height: 42px;
+      display: grid;
+      place-items: center;
+      border-radius: 14px;
+      background: linear-gradient(135deg, var(--sage), var(--peach));
+      color: white;
+      font-family: 'DM Serif Display', serif;
+      font-size: 1.2rem;
+      box-shadow: var(--shadow);
+    }
+
+    .brand-text {
+      display: flex;
+      flex-direction: column;
+      line-height: 1.05;
+    }
+
+    .brand-text span:last-child {
+      font-size: 0.82rem;
+      font-weight: 500;
+      color: var(--muted);
+    }
+
+    .back-link {
+      color: var(--sage-dark);
+      font-weight: 600;
+      font-size: 0.95rem;
+    }
+
+    .article-wrap {
+      padding: 3.5rem 0 4rem;
+    }
+
+    .article-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 32px;
+      padding: 2rem;
+      box-shadow: var(--shadow);
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: rgba(156, 175, 154, 0.15);
+      color: var(--sage-dark);
+      border: 1px solid rgba(97, 117, 101, 0.08);
+      padding: 0.45rem 0.85rem;
+      border-radius: 999px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+    }
+
+    h1, h2 {
+      margin: 0 0 1rem;
+      line-height: 1.1;
+    }
+
+    h1 {
+      font-family: 'DM Serif Display', serif;
+      font-size: clamp(2.4rem, 5vw, 4.4rem);
+      letter-spacing: -0.03em;
+      margin-bottom: 0.8rem;
+    }
+
+    .subhead {
+      color: var(--sage-dark);
+      font-weight: 700;
+      font-size: 1.05rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .meta {
+      color: var(--muted);
+      font-size: 0.95rem;
+      margin-bottom: 2rem;
+    }
+
+    p {
+      color: var(--text);
+      font-size: 1.04rem;
+      margin: 0 0 1rem;
+    }
+
+    blockquote {
+      margin: 1.75rem 0;
+      padding: 1.25rem 1.4rem;
+      background: rgba(244, 198, 181, 0.16);
+      border-left: 4px solid var(--peach);
+      border-radius: 18px;
+      font-size: 1.08rem;
+      color: var(--text);
+    }
+
+    .footer {
+      padding: 2rem 0 3rem;
+      color: var(--muted);
+    }
+
+    .footer-inner {
+      border-top: 1px solid rgba(47,49,46,0.08);
+      padding-top: 1.5rem;
+      display: flex;
+      justify-content: space-between;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    @media (max-width: 680px) {
+      .nav, .footer-inner {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .article-card {
+        padding: 1.4rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav">
+      <a href="index.html" class="brand">
+        <div class="brand-mark">S</div>
+        <div class="brand-text">
+          <span>Soft Structure</span>
+          <span>Gentle support. Real structure.</span>
+        </div>
+      </a>
+      <a class="back-link" href="index.html#journal">← Back to Home</a>
+    </div>
+  </header>
+
+  <main class="article-wrap">
+    <div class="container">
+      <article class="article-card">
+        <div class="eyebrow">Journal Entry</div>
+        <h1>You Do Not Need to Become Rigid to Change Your Life</h1>
+        <p class="subhead">Growth does not have to feel punishing to be real.</p>
+        <p class="meta">Soft Structure Journal</p>
+
+        <p>There was a point in my life where I thought the answer had to be some perfect system.</p>
+
+        <p>A perfect routine. A perfect planner. A perfect morning. A perfect version of me who never got distracted, never got tired, never needed a break, and somehow wanted to do every healthy thing every single day.</p>
+
+        <p>That version of me does not exist.</p>
+
+        <p>What I’ve learned instead is that growth does not have to feel punishing to be real. In fact, for me, the changes that lasted were the ones that became gentler, more flexible, and more rooted in my actual life. I tried having no routine at all. I tried being extremely regimented. What worked best for me ended up being something in the middle: structure that supports me, but doesn’t control me.</p>
+
+        <p>I used to think routines were about becoming more disciplined in a harsh way. Now I think of them more like support beams. They help hold things up when life gets busy, stressful, emotional, or chaotic. They are not there to make me feel bad for being human. They are there to make my life easier to live.</p>
+
+        <blockquote>“Your structure should make your life feel better, not smaller.”</blockquote>
+
+        <p>Some of the habits that have helped me most are not glamorous. Drinking water. Going for a walk. Reading. Journaling. Stretching. Having some kind of reset so I’m not spiraling into the next week already overwhelmed. None of these things are revolutionary, but together they build a kind of self-respect.</p>
+
+        <p>One of the biggest mistakes I made was thinking consistency only counted if it looked impressive. If I couldn’t do the full workout, I thought it barely counted. If I couldn’t do the whole list, I felt behind before I even started.</p>
+
+        <p>Now I know better. A ten-minute walk still counts. Five minutes of meditation still counts. Unloading the dishwasher still counts as taking care of your space. Doing something small is not failure. It is often the exact thing that keeps you connected to yourself.</p>
+
+        <p>I also had to learn that routines are not supposed to eliminate joy, novelty, or rest. They are not meant to turn your life into one long productivity challenge. They are meant to support a life that still feels alive.</p>
+
+        <p>One of the kindest things I’ve learned is that I do not need to do the most 100% of the time. I do not need to earn my rest by burning myself out first. I can build a life that includes discipline, yes, but also softness. A life with habits and systems, but also room to breathe.</p>
+
+        <p>That is the kind of structure I believe in now. Not rigid structure. Not punishment disguised as self-improvement. Soft structure. The kind that helps you show up for your life without disappearing inside it.</p>
+      </article>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div>
+        <strong>Soft Structure</strong>
+        <p>Gentle support. Real structure.</p>
+      </div>
+      <div>
+        <p>© 2026 Soft Structure</p>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
