@@ -1,26 +1,23 @@
 <!doctype html>
-<html lang="en-US">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width" />
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Soft Structure</title>
+  <title>The Life Edit</title>
   <meta
     name="description"
-    content="Soft Structure is a modern coaching and writing space for personal growth, confidence, and meaningful change — with support that feels gentle, practical, and real."
+    content="The Life Edit is a modern coaching and writing space for personal growth, confidence, and meaningful change."
   />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
   <style>
     :root {
       --bg: #fffaf6;
-      --bg-soft: #f6efe8;
-      --card: #fffdfb;
+      --bg-soft: #f7efe8;
+      --card: rgba(255, 255, 255, 0.88);
       --sage: #9caf9a;
       --sage-dark: #617565;
       --peach: #f4c6b5;
@@ -68,9 +65,9 @@
     .site-header {
       position: sticky;
       top: 0;
-      z-index: 20;
+      z-index: 30;
       backdrop-filter: blur(14px);
-      background: rgba(255, 250, 246, 0.82);
+      background: rgba(255, 250, 246, 0.84);
       border-bottom: 1px solid rgba(47, 49, 46, 0.06);
     }
 
@@ -113,7 +110,6 @@
       font-size: 0.82rem;
       font-weight: 500;
       color: var(--muted);
-      letter-spacing: 0;
     }
 
     .nav-links {
@@ -134,8 +130,7 @@
       color: var(--text);
     }
 
-    .button,
-    button {
+    .button {
       display: inline-flex;
       align-items: center;
       justify-content: center;
@@ -149,8 +144,7 @@
       transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
     }
 
-    .button:hover,
-    button:hover {
+    .button:hover {
       transform: translateY(-1px);
     }
 
@@ -193,14 +187,14 @@
 
     h1, h2, h3 {
       margin: 0 0 1rem;
-      line-height: 1.06;
+      line-height: 1.08;
     }
 
     h1 {
       font-family: 'DM Serif Display', serif;
       font-size: clamp(2.8rem, 5vw, 5.3rem);
       letter-spacing: -0.03em;
-      max-width: 11ch;
+      max-width: 10ch;
     }
 
     h2 {
@@ -217,7 +211,8 @@
     .section-copy,
     .card p,
     .about-card p,
-    .footer p {
+    .footer p,
+    .floating-card span {
       color: var(--muted);
       font-size: 1.03rem;
       margin: 0;
@@ -308,7 +303,8 @@
     .pill-grid,
     .cards-3,
     .journal-grid,
-    .steps-grid {
+    .steps-grid,
+    .about-grid {
       display: grid;
       gap: 1rem;
     }
@@ -332,8 +328,15 @@
       border-bottom: 1px solid rgba(47, 49, 46, 0.04);
     }
 
-    .cards-3 {
+    .cards-3,
+    .journal-grid,
+    .steps-grid,
+    .about-grid {
       grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .about-grid {
+      grid-template-columns: 1fr 1fr;
     }
 
     .card,
@@ -356,10 +359,6 @@
       margin-bottom: 0.7rem;
     }
 
-    .journal-grid {
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-    }
-
     .journal-card {
       background: linear-gradient(180deg, rgba(255,255,255,0.9), rgba(248,242,236,0.88));
       border: 1px solid var(--border);
@@ -376,16 +375,6 @@
       color: var(--muted);
       font-weight: 600;
       letter-spacing: 0.03em;
-    }
-
-    .about-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 1rem;
-    }
-
-    .steps-grid {
-      grid-template-columns: repeat(3, minmax(0, 1fr));
     }
 
     .step-number {
@@ -503,12 +492,13 @@
   <header class="site-header">
     <div class="container nav">
       <a href="#top" class="brand">
-        <div class="brand-mark">S</div>
+        <div class="brand-mark">L</div>
         <div class="brand-text">
-          <span>Soft Structure</span>
-          <span>Gentle support. Real structure.</span>
+          <span>The Life Edit</span>
+          <span>A softer way to create real change.</span>
         </div>
       </a>
+
       <nav class="nav-links">
         <a href="#about">About</a>
         <a href="#work-with-me">Work With Me</a>
@@ -526,13 +516,16 @@
           <div class="eyebrow">Modern coaching + writing for real life growth</div>
           <h1>Build a life that feels <span class="accent-underline">better to live</span>.</h1>
           <p>
-            Soft Structure is a modern coaching and writing space for personal growth, confidence,
-            and meaningful change — with support that feels gentle, practical, and real.
+            The Life Edit is a modern coaching and writing space for personal growth,
+            confidence, and meaningful change — with support that feels thoughtful,
+            practical, and real.
           </p>
+
           <div class="hero-actions">
             <a class="button primary" href="#start-here">Start Here</a>
             <a class="button secondary" href="#journal">Read the Journal</a>
           </div>
+
           <p class="hero-note">
             Replace the form and booking links with your real Google Form and scheduling page when you’re ready.
           </p>
@@ -549,9 +542,10 @@
               </div>
             </div>
           </div>
+
           <div class="floating-card">
             <strong>Start with a free consult</strong>
-            <span style="color: var(--muted); font-size: 0.95rem;">
+            <span>
               Fill out a short form, book a time, and see whether working together feels like a fit.
             </span>
           </div>
@@ -562,9 +556,9 @@
     <section class="feature-band">
       <div class="container">
         <div class="pill-grid">
-          <div class="pill">Life resets that actually stick</div>
+          <div class="pill">Thoughtful growth for real life</div>
           <div class="pill">Confidence, clarity, and momentum</div>
-          <div class="pill">Supportive growth without harsh pressure</div>
+          <div class="pill">Support without harsh pressure</div>
         </div>
       </div>
     </section>
@@ -573,27 +567,31 @@
       <div class="container">
         <div class="section-header">
           <div>
-            <h2>A softer way to create real change</h2>
+            <h2>About</h2>
             <p class="section-copy">
-              You do not need to become rigid, perfect, or hyper-disciplined to improve your life.
-              You need support that helps things click.
+              A modern space for reflection, support, and meaningful change.
             </p>
           </div>
         </div>
 
         <div class="about-grid">
           <div class="about-card">
-            <h3>What Soft Structure means</h3>
+            <h3>Why I created this</h3>
             <p>
-              Soft Structure is for thoughtful people who want more clarity, confidence, alignment,
-              and self-trust — but do not want growth to feel cold, clinical, or impossible to sustain.
+              I created The Life Edit because I care deeply about personal growth,
+              but I do not believe it has to feel harsh, clinical, or impossible to keep up with.
+              I’m drawn to the kind of change that feels real — the kind built through self-trust,
+              small choices, honest reflection, and practical support.
             </p>
           </div>
+
           <div class="about-card">
-            <h3>What this space is for</h3>
+            <h3>What you’ll find here</h3>
             <p>
-              Coaching, reflections, and practical support for becoming more grounded, intentional,
-              and connected to the life you actually want to live.
+              This is where my writing, ideas, and coaching come together. It’s a place for
+              reflections on becoming more confident, grounded, intentional, and connected to
+              the life you want to build. My hope is that what you find here helps you feel
+              understood, encouraged, and a little more sure of what’s possible for you.
             </p>
           </div>
         </div>
@@ -605,7 +603,9 @@
         <div class="section-header">
           <div>
             <h2>What I help with</h2>
-            <p class="section-copy">You can customize these to match your exact coaching focus.</p>
+            <p class="section-copy">
+              You can customize these later to match your exact coaching focus.
+            </p>
           </div>
         </div>
 
@@ -617,6 +617,7 @@
               Find clarity, rebuild momentum, and create movement when you feel scattered, stalled, or unsure what’s next.
             </p>
           </article>
+
           <article class="card">
             <span class="card-tag">02</span>
             <h3>Habits and routines</h3>
@@ -624,74 +625,116 @@
               Build rhythms that support your goals without turning your life into a rigid system you can’t maintain.
             </p>
           </article>
+
           <article class="card">
             <span class="card-tag">03</span>
-            <h3>Confidence and identity</h3>
+            <h3>Confidence and self-trust</h3>
             <p>
-              Strengthen self-trust, raise your standards, and grow into the version of yourself you want to become.
+              Strengthen your relationship with yourself and grow into the version of you that feels more grounded and alive.
             </p>
           </article>
         </div>
       </div>
     </section>
 
-   <section id="journal">
-  <div class="container">
-    <div class="section-header">
-      <div>
-        <h2>The Soft Structure Journal</h2>
-        <p class="section-copy">
-          Reflections on growth, self-trust, and building a life that feels better to live.
-        </p>
+    <section id="journal">
+      <div class="container">
+        <div class="section-header">
+          <div>
+            <h2>The Life Edit Journal</h2>
+            <p class="section-copy">
+              Reflections on growth, self-trust, and building a life that feels better to live.
+            </p>
+          </div>
+        </div>
+
+        <div class="journal-grid">
+          <article class="journal-card">
+            <div>
+              <small>Journal Entry</small>
+              <h3>You Do Not Need to Become Rigid to Change Your Life</h3>
+              <p>
+                A reflection on routines, self-respect, and building a life that feels supportive instead of punishing.
+              </p>
+            </div>
+            <a href="blog-rigid-to-change.html" style="font-weight: 700; margin-top: 1rem;">Read more →</a>
+          </article>
+
+          <article class="journal-card">
+            <div>
+              <small>Journal Entry</small>
+              <h3>Self-Trust Is Built in Small, Quiet Moments</h3>
+              <p>
+                A reflection on confidence, self-trust, and the small ways we learn we can rely on ourselves.
+              </p>
+            </div>
+            <a href="blog-self-trust.html" style="font-weight: 700; margin-top: 1rem;">Read more →</a>
+          </article>
+
+          <article class="journal-card">
+            <div>
+              <small>Coming Soon</small>
+              <h3>What It Means to Edit Your Life With Intention</h3>
+              <p>
+                More reflections, practical encouragement, and personal growth writing coming soon.
+              </p>
+            </div>
+            <a href="#" style="font-weight: 700; margin-top: 1rem;">Read more →</a>
+          </article>
+        </div>
       </div>
-    </div>
+    </section>
 
-    <div class="journal-grid">
-      <article class="journal-card">
-        <div>
-          <small>Journal Entry</small>
-          <h3>You Do Not Need to Become Rigid to Change Your Life</h3>
-          <p>
-            A reflection on routines, self-respect, and building a life that feels supportive instead of punishing.
-          </p>
+    <section id="work-with-me">
+      <div class="container">
+        <div class="section-header">
+          <div>
+            <h2>Work With Me</h2>
+            <p class="section-copy">
+              Keep this simple to start. Your first version does not need a huge offer menu.
+            </p>
+          </div>
         </div>
-        <a href="blog-rigid-to-change.html" style="font-weight: 700; margin-top: 1rem;">Read more →</a>
-      </article>
 
-      <article class="journal-card">
-        <div>
-          <small>Journal Entry</small>
-          <h3>Self-Trust Is Built in Small, Quiet Moments</h3>
-          <p>
-            A reflection on confidence, self-trust, and the small ways we learn we can rely on ourselves.
-          </p>
-        </div>
-        <a href="blog-self-trust.html" style="font-weight: 700; margin-top: 1rem;">Read more →</a>
-      </article>
+        <div class="steps-grid">
+          <article class="card">
+            <div class="step-number">1</div>
+            <h3>Fill out the interest form</h3>
+            <p>
+              Share a little about what’s bringing you here, what you want support with, and what kind of change you’re looking for.
+            </p>
+          </article>
 
-      <article class="journal-card">
-        <div>
-          <small>Coming Soon</small>
-          <h3>What Soft Structure Looks Like in Real Life</h3>
-          <p>
-            More reflections, practical encouragement, and personal growth writing coming soon.
-          </p>
+          <article class="card">
+            <div class="step-number">2</div>
+            <h3>Book a free consult</h3>
+            <p>
+              Choose a time that works for you using your scheduling link. This can connect to your Google booking page.
+            </p>
+          </article>
+
+          <article class="card">
+            <div class="step-number">3</div>
+            <h3>See if it’s a fit</h3>
+            <p>
+              We’ll talk about what you’re looking for, where you feel stuck, and whether coaching together feels aligned.
+            </p>
+          </article>
         </div>
-        <a href="#" style="font-weight: 700; margin-top: 1rem;">Read more →</a>
-      </article>
-    </div>
-  </div>
-</section>
+      </div>
+    </section>
 
     <section id="start-here">
       <div class="container">
         <div class="cta-card">
           <div class="cta-copy">
-            <h2>Ready to begin?</h2>
+            <h2>Ready to make your life feel more like your own?</h2>
             <p>
-              Start with the form, then book a free consult. This first conversation is a simple, low-pressure way to connect and see what support could look like.
+              Start with the form, then book a free consult. This first conversation is a simple,
+              low-pressure way to connect and explore what kind of support would feel most helpful.
             </p>
           </div>
+
           <div class="hero-actions" style="margin-top: 0;">
             <a class="button primary" href="https://forms.google.com" target="_blank" rel="noopener noreferrer">Open the Form</a>
             <a class="button secondary" href="https://calendar.google.com" target="_blank" rel="noopener noreferrer">Book a Consult</a>
@@ -704,15 +747,13 @@
   <footer class="footer">
     <div class="container footer-inner">
       <div>
-        <strong>Soft Structure</strong>
-        <p>Gentle support. Real structure.</p>
+        <strong>The Life Edit</strong>
+        <p>A softer way to create real change.</p>
       </div>
       <div>
-        <p>© 2026 Soft Structure · Replace with your business email and social links</p>
+        <p>© 2026 The Life Edit · Replace with your business email and social links</p>
       </div>
     </div>
   </footer>
 </body>
-</html>
-
 </html>
