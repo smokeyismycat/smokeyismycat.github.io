@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Self-Trust Is Built in Small, Quiet Moments | Soft Structure</title>
+  <meta
+    name="description"
+    content="A Soft Structure journal entry about self-trust, support, independence, and the small moments that change your life."
+  />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #fffaf6;
+      --card: rgba(255,255,255,0.88);
+      --sage: #9caf9a;
+      --sage-dark: #617565;
+      --peach: #f4c6b5;
+      --text: #2f312e;
+      --muted: #6d6f68;
+      --border: rgba(47,49,46,0.08);
+      --shadow: 0 16px 40px rgba(52,58,50,0.08);
+      --radius: 24px;
+      --max-width: 860px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background: linear-gradient(180deg, #fffaf6 0%, #fff8f5 100%);
+      color: var(--text);
+      line-height: 1.75;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      width: min(calc(100% - 2rem), var(--max-width));
+      margin: 0 auto;
+    }
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      backdrop-filter: blur(14px);
+      background: rgba(255, 250, 246, 0.82);
+      border-bottom: 1px solid rgba(47,49,46,0.06);
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      padding: 1rem 0;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+    }
+
+    .brand-mark {
+      width: 42px;
+      height: 42px;
+      display: grid;
+      place-items: center;
+      border-radius: 14px;
+      background: linear-gradient(135deg, var(--sage), var(--peach));
+      color: white;
+      font-family: 'DM Serif Display', serif;
+      font-size: 1.2rem;
+      box-shadow: var(--shadow);
+    }
+
+    .brand-text {
+      display: flex;
+      flex-direction: column;
+      line-height: 1.05;
+    }
+
+    .brand-text span:last-child {
+      font-size: 0.82rem;
+      font-weight: 500;
+      color: var(--muted);
+    }
+
+    .back-link {
+      color: var(--sage-dark);
+      font-weight: 600;
+      font-size: 0.95rem;
+    }
+
+    .article-wrap {
+      padding: 3.5rem 0 4rem;
+    }
+
+    .article-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 32px;
+      padding: 2rem;
+      box-shadow: var(--shadow);
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: rgba(156, 175, 154, 0.15);
+      color: var(--sage-dark);
+      border: 1px solid rgba(97, 117, 101, 0.08);
+      padding: 0.45rem 0.85rem;
+      border-radius: 999px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+    }
+
+    h1, h2 {
+      margin: 0 0 1rem;
+      line-height: 1.1;
+    }
+
+    h1 {
+      font-family: 'DM Serif Display', serif;
+      font-size: clamp(2.4rem, 5vw, 4.4rem);
+      letter-spacing: -0.03em;
+      margin-bottom: 0.8rem;
+    }
+
+    .subhead {
+      color: var(--sage-dark);
+      font-weight: 700;
+      font-size: 1.05rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .meta {
+      color: var(--muted);
+      font-size: 0.95rem;
+      margin-bottom: 2rem;
+    }
+
+    p {
+      color: var(--text);
+      font-size: 1.04rem;
+      margin: 0 0 1rem;
+    }
+
+    blockquote {
+      margin: 1.75rem 0;
+      padding: 1.25rem 1.4rem;
+      background: rgba(156, 175, 154, 0.14);
+      border-left: 4px solid var(--sage);
+      border-radius: 18px;
+      font-size: 1.08rem;
+      color: var(--text);
+    }
+
+    .footer {
+      padding: 2rem 0 3rem;
+      color: var(--muted);
+    }
+
+    .footer-inner {
+      border-top: 1px solid rgba(47,49,46,0.08);
+      padding-top: 1.5rem;
+      display: flex;
+      justify-content: space-between;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    @media (max-width: 680px) {
+      .nav, .footer-inner {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .article-card {
+        padding: 1.4rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav">
+      <a href="index.html" class="brand">
+        <div class="brand-mark">S</div>
+        <div class="brand-text">
+          <span>Soft Structure</span>
+          <span>Gentle support. Real structure.</span>
+        </div>
+      </a>
+      <a class="back-link" href="index.html#journal">← Back to Home</a>
+    </div>
+  </header>
+
+  <main class="article-wrap">
+    <div class="container">
+      <article class="article-card">
+        <div class="eyebrow">Journal Entry</div>
+        <h1>Self-Trust Is Built in Small, Quiet Moments</h1>
+        <p class="subhead">Self-trust is built by showing up for yourself again and again.</p>
+        <p class="meta">Soft Structure Journal</p>
+
+        <p>For a long time, I thought confidence was something you either had or you didn’t.</p>
+
+        <p>I thought some people just naturally trusted themselves, made decisions easily, knew what they wanted, and moved through life without second-guessing everything. I did not feel like one of those people.</p>
+
+        <p>What I’ve learned is that self-trust is usually built much more quietly than that.</p>
+
+        <p>It is built in moments that do not always look dramatic from the outside. Making the appointment you’ve been putting off. Reading the instructions and building the furniture yourself. Fixing something instead of panicking. Following through on a boundary. Keeping a small promise to yourself, even when no one else would know if you didn’t.</p>
+
+        <blockquote>“Self-trust is not one big breakthrough. It’s a collection of small moments where you prove to yourself that you can be counted on.”</blockquote>
+
+        <p>Those moments matter because they teach you something powerful: you can rely on yourself.</p>
+
+        <p>That was a huge shift for me. I had support in my life, and I’m grateful for that, but I started to realize that support and dependence are not the same thing. One of the most meaningful lessons I learned in a healthy relationship was what it felt like to be supported without being rescued.</p>
+
+        <p>That kind of support gave me room to grow. It gave me room to figure things out instead of handing my life over to someone else to manage. And in that space, I began to discover my own strength.</p>
+
+        <p>Self-trust also grows through repetition. When you show up for yourself again and again, even imperfectly, you create evidence. You begin to believe your own effort. This is why routines can be so powerful when they are used gently. If you keep proving to yourself that you will try, adjust, come back, and care for yourself, your relationship with yourself starts to change.</p>
+
+        <p>And maybe the most freeing part is this: self-trust does not require you to become fearless first. You can still be uncertain. You can still be anxious. You can still be figuring things out. You just start acting like someone who is worth showing up for anyway.</p>
+
+        <p>I think a lot of us are more capable than we think. Not because life is easy, and not because we should never lean on other people, but because we often underestimate what becomes possible once we stop abandoning ourselves.</p>
+
+        <p>Self-trust is built in small, quiet moments. Over time, those moments change the way you live.</p>
+      </article>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div>
+        <strong>Soft Structure</strong>
+        <p>Gentle support. Real structure.</p>
+      </div>
+      <div>
+        <p>© 2026 Soft Structure</p>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
