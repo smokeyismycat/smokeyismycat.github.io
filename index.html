@@ -3,20 +3,756 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
-    <title>Maggie</title>
-  </head>
-  <body>
-    <h1>Hi Evan I made the website title "Maggie" LOL</h1>
-    <p>Evan, please buy <a href="https://www.ticketmaster.com/event/0700636DD3668717"> these</a>tickets</p>
-    <p>My dad said I have to be nicer to Evan on my website - or more positive.</p>
-    <h2>I'm a serious coder now</h2>
-    <ol>
-      <li>Smokey</li>
-      <li>Charlie</li>
-      <li>Sylvie</li>
-    </ol>
-    <h3>That's the order I got my cats</h3>
-    <img src="https://www.fllt.org/wp-content/uploads/2018/01/starnose_Ken-Catania-1.jpg" alt="I love this Mole" width="500" height="600">
-    <h4>Evan is supposed to teach me how to link my own images but he didn't so now I had to do this instead</h4>
-  </body>
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Soft Structure</title>
+  <meta
+    name="description"
+    content="Soft Structure is a modern coaching and writing space for personal growth, confidence, and meaningful change — with support that feels gentle, practical, and real."
+  />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #fffaf6;
+      --bg-soft: #f6efe8;
+      --card: #fffdfb;
+      --sage: #9caf9a;
+      --sage-dark: #617565;
+      --peach: #f4c6b5;
+      --blush: #efddd7;
+      --text: #2f312e;
+      --muted: #6d6f68;
+      --border: rgba(47, 49, 46, 0.08);
+      --shadow: 0 16px 40px rgba(52, 58, 50, 0.08);
+      --radius: 24px;
+      --max-width: 1180px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background: linear-gradient(180deg, #fffaf6 0%, #fff8f5 100%);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+      border-radius: 20px;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      width: min(calc(100% - 2rem), var(--max-width));
+      margin: 0 auto;
+    }
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      backdrop-filter: blur(14px);
+      background: rgba(255, 250, 246, 0.82);
+      border-bottom: 1px solid rgba(47, 49, 46, 0.06);
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      padding: 1rem 0;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+    }
+
+    .brand-mark {
+      width: 42px;
+      height: 42px;
+      display: grid;
+      place-items: center;
+      border-radius: 14px;
+      background: linear-gradient(135deg, var(--sage), var(--peach));
+      color: white;
+      font-family: 'DM Serif Display', serif;
+      font-size: 1.2rem;
+      box-shadow: var(--shadow);
+    }
+
+    .brand-text {
+      display: flex;
+      flex-direction: column;
+      line-height: 1.05;
+    }
+
+    .brand-text span:last-child {
+      font-size: 0.82rem;
+      font-weight: 500;
+      color: var(--muted);
+      letter-spacing: 0;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 1.2rem;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
+
+    .nav-links a {
+      color: var(--muted);
+      font-size: 0.96rem;
+      transition: 0.2s ease;
+    }
+
+    .nav-links a:hover {
+      color: var(--text);
+    }
+
+    .button,
+    button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.55rem;
+      border: 0;
+      border-radius: 999px;
+      padding: 0.92rem 1.25rem;
+      font-weight: 600;
+      font-size: 0.96rem;
+      cursor: pointer;
+      transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+    }
+
+    .button:hover,
+    button:hover {
+      transform: translateY(-1px);
+    }
+
+    .button.primary {
+      background: var(--sage-dark);
+      color: white;
+      box-shadow: 0 10px 25px rgba(97, 117, 101, 0.22);
+    }
+
+    .button.secondary {
+      background: white;
+      color: var(--text);
+      border: 1px solid var(--border);
+    }
+
+    .hero {
+      padding: 4.5rem 0 3.5rem;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 2rem;
+      align-items: center;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: rgba(156, 175, 154, 0.15);
+      color: var(--sage-dark);
+      border: 1px solid rgba(97, 117, 101, 0.08);
+      padding: 0.45rem 0.85rem;
+      border-radius: 999px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+    }
+
+    h1, h2, h3 {
+      margin: 0 0 1rem;
+      line-height: 1.06;
+    }
+
+    h1 {
+      font-family: 'DM Serif Display', serif;
+      font-size: clamp(2.8rem, 5vw, 5.3rem);
+      letter-spacing: -0.03em;
+      max-width: 11ch;
+    }
+
+    h2 {
+      font-family: 'DM Serif Display', serif;
+      font-size: clamp(2rem, 3vw, 3rem);
+      letter-spacing: -0.02em;
+    }
+
+    h3 {
+      font-size: 1.2rem;
+    }
+
+    .hero p,
+    .section-copy,
+    .card p,
+    .about-card p,
+    .footer p {
+      color: var(--muted);
+      font-size: 1.03rem;
+      margin: 0;
+    }
+
+    .hero-copy {
+      max-width: 640px;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 0.85rem;
+      flex-wrap: wrap;
+      margin-top: 1.6rem;
+    }
+
+    .hero-note {
+      margin-top: 1rem;
+      font-size: 0.95rem;
+      color: var(--muted);
+    }
+
+    .hero-visual {
+      position: relative;
+    }
+
+    .photo-card {
+      background: linear-gradient(180deg, #fdf7f3, #f4ebe3);
+      border-radius: 32px;
+      padding: 1rem;
+      box-shadow: var(--shadow);
+      border: 1px solid rgba(47, 49, 46, 0.05);
+    }
+
+    .photo-placeholder {
+      min-height: 530px;
+      border-radius: 26px;
+      background:
+        radial-gradient(circle at top left, rgba(244, 198, 181, 0.58), transparent 34%),
+        radial-gradient(circle at bottom right, rgba(156, 175, 154, 0.45), transparent 28%),
+        linear-gradient(160deg, #fff7f1, #efe8e1);
+      display: flex;
+      align-items: flex-end;
+      justify-content: flex-start;
+      padding: 1.35rem;
+      overflow: hidden;
+    }
+
+    .photo-placeholder-text {
+      background: rgba(255, 255, 255, 0.72);
+      backdrop-filter: blur(10px);
+      padding: 1rem 1.1rem;
+      border-radius: 18px;
+      max-width: 280px;
+      border: 1px solid rgba(47, 49, 46, 0.06);
+    }
+
+    .floating-card {
+      position: absolute;
+      right: -10px;
+      bottom: 28px;
+      background: white;
+      border-radius: 22px;
+      padding: 1rem 1.1rem;
+      box-shadow: var(--shadow);
+      border: 1px solid rgba(47, 49, 46, 0.06);
+      max-width: 230px;
+    }
+
+    .floating-card strong {
+      display: block;
+      margin-bottom: 0.25rem;
+      font-size: 0.98rem;
+    }
+
+    section {
+      padding: 2.5rem 0;
+    }
+
+    .section-header {
+      display: flex;
+      justify-content: space-between;
+      gap: 1rem;
+      align-items: end;
+      margin-bottom: 1.4rem;
+    }
+
+    .pill-grid,
+    .cards-3,
+    .journal-grid,
+    .steps-grid {
+      display: grid;
+      gap: 1rem;
+    }
+
+    .pill-grid {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .pill {
+      padding: 1rem 1.1rem;
+      border-radius: 18px;
+      background: rgba(255, 255, 255, 0.75);
+      border: 1px solid var(--border);
+      box-shadow: 0 10px 28px rgba(52, 58, 50, 0.04);
+      font-weight: 600;
+    }
+
+    .feature-band {
+      background: linear-gradient(180deg, rgba(255,255,255,0.75), rgba(255,255,255,0.5));
+      border-top: 1px solid rgba(47, 49, 46, 0.04);
+      border-bottom: 1px solid rgba(47, 49, 46, 0.04);
+    }
+
+    .cards-3 {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .card,
+    .about-card,
+    .cta-card {
+      background: rgba(255, 255, 255, 0.86);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.35rem;
+      box-shadow: 0 12px 32px rgba(52, 58, 50, 0.04);
+    }
+
+    .card-tag {
+      display: inline-block;
+      font-size: 0.82rem;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: var(--sage-dark);
+      margin-bottom: 0.7rem;
+    }
+
+    .journal-grid {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .journal-card {
+      background: linear-gradient(180deg, rgba(255,255,255,0.9), rgba(248,242,236,0.88));
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      padding: 1.35rem;
+      box-shadow: 0 12px 26px rgba(52, 58, 50, 0.05);
+      min-height: 240px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .journal-card small {
+      color: var(--muted);
+      font-weight: 600;
+      letter-spacing: 0.03em;
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+
+    .steps-grid {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .step-number {
+      width: 38px;
+      height: 38px;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      background: var(--blush);
+      font-weight: 700;
+      margin-bottom: 0.8rem;
+    }
+
+    .cta-card {
+      background: linear-gradient(135deg, rgba(156, 175, 154, 0.18), rgba(244, 198, 181, 0.2));
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+
+    .cta-copy {
+      max-width: 650px;
+    }
+
+    .footer {
+      padding: 2rem 0 3rem;
+      color: var(--muted);
+    }
+
+    .footer-inner {
+      border-top: 1px solid rgba(47, 49, 46, 0.08);
+      padding-top: 1.5rem;
+      display: flex;
+      justify-content: space-between;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .accent-underline {
+      position: relative;
+      display: inline-block;
+    }
+
+    .accent-underline::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0.08em;
+      height: 0.35em;
+      background: rgba(244, 198, 181, 0.55);
+      z-index: -1;
+      border-radius: 999px;
+    }
+
+    @media (max-width: 960px) {
+      .hero-grid,
+      .about-grid,
+      .cards-3,
+      .journal-grid,
+      .steps-grid,
+      .pill-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .cta-card,
+      .section-header,
+      .footer-inner {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .hero {
+        padding-top: 3rem;
+      }
+
+      .floating-card {
+        position: static;
+        margin-top: 1rem;
+        max-width: none;
+      }
+
+      .photo-placeholder {
+        min-height: 360px;
+      }
+    }
+
+    @media (max-width: 680px) {
+      .nav {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .nav-links {
+        justify-content: flex-start;
+      }
+
+      h1 {
+        max-width: none;
+      }
+
+      .hero-actions {
+        width: 100%;
+      }
+
+      .button {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav">
+      <a href="#top" class="brand">
+        <div class="brand-mark">S</div>
+        <div class="brand-text">
+          <span>Soft Structure</span>
+          <span>Gentle support. Real structure.</span>
+        </div>
+      </a>
+      <nav class="nav-links">
+        <a href="#about">About</a>
+        <a href="#work-with-me">Work With Me</a>
+        <a href="#journal">Journal</a>
+        <a href="#start-here">Start Here</a>
+        <a class="button secondary" href="https://forms.google.com" target="_blank" rel="noopener noreferrer">Interest Form</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <div class="eyebrow">Modern coaching + writing for real life growth</div>
+          <h1>Build a life that feels <span class="accent-underline">better to live</span>.</h1>
+          <p>
+            Soft Structure is a modern coaching and writing space for personal growth, confidence,
+            and meaningful change — with support that feels gentle, practical, and real.
+          </p>
+          <div class="hero-actions">
+            <a class="button primary" href="#start-here">Start Here</a>
+            <a class="button secondary" href="#journal">Read the Journal</a>
+          </div>
+          <p class="hero-note">
+            Replace the form and booking links with your real Google Form and scheduling page when you’re ready.
+          </p>
+        </div>
+
+        <div class="hero-visual">
+          <div class="photo-card">
+            <div class="photo-placeholder">
+              <div class="photo-placeholder-text">
+                <strong>Add your photo here</strong>
+                <p style="margin: 0; color: var(--muted); font-size: 0.95rem;">
+                  This is a great place for a warm, modern portrait or lifestyle image.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="floating-card">
+            <strong>Start with a free consult</strong>
+            <span style="color: var(--muted); font-size: 0.95rem;">
+              Fill out a short form, book a time, and see whether working together feels like a fit.
+            </span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="feature-band">
+      <div class="container">
+        <div class="pill-grid">
+          <div class="pill">Life resets that actually stick</div>
+          <div class="pill">Confidence, clarity, and momentum</div>
+          <div class="pill">Supportive growth without harsh pressure</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="container">
+        <div class="section-header">
+          <div>
+            <h2>A softer way to create real change</h2>
+            <p class="section-copy">
+              You do not need to become rigid, perfect, or hyper-disciplined to improve your life.
+              You need support that helps things click.
+            </p>
+          </div>
+        </div>
+
+        <div class="about-grid">
+          <div class="about-card">
+            <h3>What Soft Structure means</h3>
+            <p>
+              Soft Structure is for thoughtful people who want more clarity, confidence, alignment,
+              and self-trust — but do not want growth to feel cold, clinical, or impossible to sustain.
+            </p>
+          </div>
+          <div class="about-card">
+            <h3>What this space is for</h3>
+            <p>
+              Coaching, reflections, and practical support for becoming more grounded, intentional,
+              and connected to the life you actually want to live.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="section-header">
+          <div>
+            <h2>What I help with</h2>
+            <p class="section-copy">You can customize these to match your exact coaching focus.</p>
+          </div>
+        </div>
+
+        <div class="cards-3">
+          <article class="card">
+            <span class="card-tag">01</span>
+            <h3>Getting unstuck</h3>
+            <p>
+              Find clarity, rebuild momentum, and create movement when you feel scattered, stalled, or unsure what’s next.
+            </p>
+          </article>
+          <article class="card">
+            <span class="card-tag">02</span>
+            <h3>Habits and routines</h3>
+            <p>
+              Build rhythms that support your goals without turning your life into a rigid system you can’t maintain.
+            </p>
+          </article>
+          <article class="card">
+            <span class="card-tag">03</span>
+            <h3>Confidence and identity</h3>
+            <p>
+              Strengthen self-trust, raise your standards, and grow into the version of yourself you want to become.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="journal">
+      <div class="container">
+        <div class="section-header">
+          <div>
+            <h2>The Soft Structure Journal</h2>
+            <p class="section-copy">
+              Use this space for excerpts from your book, short essays, reflections, or blog-style posts.
+            </p>
+          </div>
+        </div>
+
+        <div class="journal-grid">
+          <article class="journal-card">
+            <div>
+              <small>From the Book</small>
+              <h3>You do not need a harder life to become stronger.</h3>
+              <p>
+                Replace this with a short excerpt that introduces your voice and perspective.
+                Let people feel your thinking before they ever book a call.
+              </p>
+            </div>
+            <a href="#" style="font-weight: 700; margin-top: 1rem;">Read more →</a>
+          </article>
+
+          <article class="journal-card">
+            <div>
+              <small>Reflection</small>
+              <h3>Growth works better when it fits your real life.</h3>
+              <p>
+                Share a post about routines, identity, confidence, or navigating a reset in a more compassionate way.
+              </p>
+            </div>
+            <a href="#" style="font-weight: 700; margin-top: 1rem;">Read more →</a>
+          </article>
+
+          <article class="journal-card">
+            <div>
+              <small>Journal Note</small>
+              <h3>What soft structure actually looks like in practice.</h3>
+              <p>
+                This could be a short blog post that helps potential clients understand your method and style.
+              </p>
+            </div>
+            <a href="#" style="font-weight: 700; margin-top: 1rem;">Read more →</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="work-with-me">
+      <div class="container">
+        <div class="section-header">
+          <div>
+            <h2>Work With Me</h2>
+            <p class="section-copy">
+              Keep this simple to start. Your first version does not need a huge offer menu.
+            </p>
+          </div>
+        </div>
+
+        <div class="steps-grid">
+          <article class="card">
+            <div class="step-number">1</div>
+            <h3>Fill out the interest form</h3>
+            <p>
+              Share a little about what’s bringing you here, what you want support with, and what kind of change you’re looking for.
+            </p>
+          </article>
+
+          <article class="card">
+            <div class="step-number">2</div>
+            <h3>Book a free consult</h3>
+            <p>
+              Choose a time that works for you using my booking link. This can connect to your Google scheduling page.
+            </p>
+          </article>
+
+          <article class="card">
+            <div class="step-number">3</div>
+            <h3>See if it’s a fit</h3>
+            <p>
+              We’ll talk about what you’re looking for, where you feel stuck, and whether coaching together feels aligned.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="start-here">
+      <div class="container">
+        <div class="cta-card">
+          <div class="cta-copy">
+            <h2>Ready to begin?</h2>
+            <p>
+              Start with the form, then book a free consult. This first conversation is a simple, low-pressure way to connect and see what support could look like.
+            </p>
+          </div>
+          <div class="hero-actions" style="margin-top: 0;">
+            <a class="button primary" href="https://forms.google.com" target="_blank" rel="noopener noreferrer">Open the Form</a>
+            <a class="button secondary" href="https://calendar.google.com" target="_blank" rel="noopener noreferrer">Book a Consult</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div>
+        <strong>Soft Structure</strong>
+        <p>Gentle support. Real structure.</p>
+      </div>
+      <div>
+        <p>© 2026 Soft Structure · Replace with your business email and social links</p>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
+
 </html>
