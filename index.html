@@ -1,74 +1,52 @@
 <!doctype html>
 <!DOCTYPE html>
 <html lang="en">
+<!DOCTYPE html>
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>The Life Edit</title>
-  <meta
-    name="description"
-    content="The Life Edit is a modern coaching and writing space for personal growth, confidence, and meaningful change."
-  />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-
+  <title>Lora Vietzen Small Business Support</title>
+  <meta name="description" content="Practical support for small businesses across operations, merchandising, training, customer experience, communication, and visibility." />
   <style>
     :root {
-      --bg: #fffaf6;
-      --bg-soft: #f7efe8;
-      --card: rgba(255, 255, 255, 0.88);
-      --sage: #9caf9a;
-      --sage-dark: #617565;
-      --peach: #f4c6b5;
-      --blush: #efddd7;
-      --text: #2f312e;
-      --muted: #6d6f68;
-      --border: rgba(47, 49, 46, 0.08);
-      --shadow: 0 16px 40px rgba(52, 58, 50, 0.08);
-      --radius: 24px;
-      --max-width: 1180px;
+      --bg: #f8f6f2;
+      --surface: #ffffff;
+      --text: #2b2a28;
+      --muted: #6a655d;
+      --line: #e5dfd6;
+      --accent: #5a6b5c;
+      --accent-2: #b6845b;
+      --shadow: 0 10px 30px rgba(43, 42, 40, 0.08);
+      --radius: 22px;
+      --max: 1120px;
     }
 
-    * {
-      box-sizing: border-box;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
     body {
       margin: 0;
-      font-family: 'Inter', sans-serif;
-      background: linear-gradient(180deg, #fffaf6 0%, #fff8f5 100%);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: var(--bg);
       color: var(--text);
       line-height: 1.6;
     }
 
-    img {
-      max-width: 100%;
-      display: block;
-      border-radius: 20px;
-    }
-
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; display: block; }
 
     .container {
-      width: min(calc(100% - 2rem), var(--max-width));
+      width: min(calc(100% - 2rem), var(--max));
       margin: 0 auto;
     }
 
-    .site-header {
+    header {
       position: sticky;
       top: 0;
-      z-index: 30;
+      z-index: 20;
       backdrop-filter: blur(14px);
-      background: rgba(255, 250, 246, 0.84);
-      border-bottom: 1px solid rgba(47, 49, 46, 0.06);
+      background: rgba(248, 246, 242, 0.85);
+      border-bottom: 1px solid rgba(229, 223, 214, 0.8);
     }
 
     .nav {
@@ -81,424 +59,349 @@
 
     .brand {
       display: flex;
-      align-items: center;
-      gap: 0.8rem;
-      font-weight: 700;
-      letter-spacing: 0.02em;
-    }
-
-    .brand-mark {
-      width: 42px;
-      height: 42px;
-      display: grid;
-      place-items: center;
-      border-radius: 14px;
-      background: linear-gradient(135deg, var(--sage), var(--peach));
-      color: white;
-      font-family: 'DM Serif Display', serif;
-      font-size: 1.2rem;
-      box-shadow: var(--shadow);
-    }
-
-    .brand-text {
-      display: flex;
       flex-direction: column;
-      line-height: 1.05;
+      gap: 0.15rem;
     }
 
-    .brand-text span:last-child {
-      font-size: 0.82rem;
-      font-weight: 500;
+    .brand strong {
+      font-size: 1rem;
+      letter-spacing: 0.01em;
+    }
+
+    .brand span {
       color: var(--muted);
+      font-size: 0.88rem;
     }
 
     .nav-links {
       display: flex;
-      align-items: center;
-      gap: 1.2rem;
       flex-wrap: wrap;
-      justify-content: flex-end;
-    }
-
-    .nav-links a {
-      color: var(--muted);
-      font-size: 0.96rem;
-      transition: 0.2s ease;
-    }
-
-    .nav-links a:hover {
-      color: var(--text);
-    }
-
-    .button {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 0.55rem;
-      border: 0;
-      border-radius: 999px;
-      padding: 0.92rem 1.25rem;
-      font-weight: 600;
-      font-size: 0.96rem;
-      cursor: pointer;
-      transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
-    }
-
-    .button:hover {
-      transform: translateY(-1px);
-    }
-
-    .button.primary {
-      background: var(--sage-dark);
-      color: white;
-      box-shadow: 0 10px 25px rgba(97, 117, 101, 0.22);
-    }
-
-    .button.secondary {
-      background: white;
-      color: var(--text);
-      border: 1px solid var(--border);
-    }
-
-    .hero {
-      padding: 4.5rem 0 3.5rem;
-    }
-
-    .hero-grid {
-      display: grid;
-      grid-template-columns: 1.1fr 0.9fr;
-      gap: 2rem;
-      align-items: center;
-    }
-
-    .eyebrow {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      background: rgba(156, 175, 154, 0.15);
-      color: var(--sage-dark);
-      border: 1px solid rgba(97, 117, 101, 0.08);
-      padding: 0.45rem 0.85rem;
-      border-radius: 999px;
-      font-size: 0.9rem;
-      font-weight: 600;
-      margin-bottom: 1rem;
-    }
-
-    h1, h2, h3 {
-      margin: 0 0 1rem;
-      line-height: 1.08;
-    }
-
-    h1 {
-      font-family: 'DM Serif Display', serif;
-      font-size: clamp(2.8rem, 5vw, 5.3rem);
-      letter-spacing: -0.03em;
-      max-width: 10ch;
-    }
-
-    h2 {
-      font-family: 'DM Serif Display', serif;
-      font-size: clamp(2rem, 3vw, 3rem);
-      letter-spacing: -0.02em;
-    }
-
-    h3 {
-      font-size: 1.2rem;
-    }
-
-    .hero p,
-    .section-copy,
-    .card p,
-    .about-card p,
-    .footer p,
-    .floating-card span {
-      color: var(--muted);
-      font-size: 1.03rem;
-      margin: 0;
-    }
-
-    .hero-copy {
-      max-width: 640px;
-    }
-
-    .hero-actions {
-      display: flex;
-      gap: 0.85rem;
-      flex-wrap: wrap;
-      margin-top: 1.6rem;
-    }
-.hero-photo {
-  width: 100%;
-  height: 530px;
-  object-fit: cover;
-  object-position: center;
-  border-radius: 26px;
-}
-    .hero-note {
-      margin-top: 1rem;
+      gap: 1rem;
       font-size: 0.95rem;
       color: var(--muted);
     }
 
-    .hero-visual {
-      position: relative;
-    }
-
-    .photo-card {
-      background: linear-gradient(180deg, #fdf7f3, #f4ebe3);
-      border-radius: 32px;
-      padding: 1rem;
-      box-shadow: var(--shadow);
-      border: 1px solid rgba(47, 49, 46, 0.05);
-    }
-
-   .hero-photo {
-  height: 360px;
-}
-
-    .photo-placeholder-text {
-      background: rgba(255, 255, 255, 0.72);
-      backdrop-filter: blur(10px);
-      padding: 1rem 1.1rem;
-      border-radius: 18px;
-      max-width: 280px;
-      border: 1px solid rgba(47, 49, 46, 0.06);
-    }
-
-    .floating-card {
-      position: absolute;
-      right: -10px;
-      bottom: 28px;
-      background: white;
-      border-radius: 22px;
-      padding: 1rem 1.1rem;
-      box-shadow: var(--shadow);
-      border: 1px solid rgba(47, 49, 46, 0.06);
-      max-width: 230px;
-    }
-
-    .floating-card strong {
-      display: block;
-      margin-bottom: 0.25rem;
-      font-size: 0.98rem;
-    }
-
-    section {
-      padding: 2.5rem 0;
-    }
-
-    .section-header {
-      display: flex;
-      justify-content: space-between;
-      gap: 1rem;
-      align-items: end;
-      margin-bottom: 1.4rem;
-    }
-
-    .pill-grid,
-    .cards-3,
-    .journal-grid,
-    .steps-grid,
-    .about-grid {
-      display: grid;
-      gap: 1rem;
-    }
-
-    .pill-grid {
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-    }
-
-    .pill {
-      padding: 1rem 1.1rem;
-      border-radius: 18px;
-      background: rgba(255, 255, 255, 0.75);
-      border: 1px solid var(--border);
-      box-shadow: 0 10px 28px rgba(52, 58, 50, 0.04);
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      border-radius: 999px;
+      padding: 0.9rem 1.2rem;
       font-weight: 600;
+      transition: 0.2s ease;
+      border: 1px solid transparent;
     }
 
-    .feature-band {
-      background: linear-gradient(180deg, rgba(255,255,255,0.75), rgba(255,255,255,0.5));
-      border-top: 1px solid rgba(47, 49, 46, 0.04);
-      border-bottom: 1px solid rgba(47, 49, 46, 0.04);
+    .btn-primary {
+      background: var(--accent);
+      color: white;
+      box-shadow: var(--shadow);
     }
 
-    .cards-3,
-    .journal-grid,
-    .steps-grid,
-    .about-grid {
-      grid-template-columns: repeat(3, minmax(0, 1fr));
+    .btn-primary:hover { transform: translateY(-1px); }
+
+    .btn-secondary {
+      background: transparent;
+      border-color: var(--line);
+      color: var(--text);
     }
 
-    .about-grid {
-      grid-template-columns: 1fr 1fr;
+    .hero {
+      padding: 5.5rem 0 4rem;
     }
 
-    .card,
-    .about-card,
-    .cta-card {
-      background: rgba(255, 255, 255, 0.86);
-      border: 1px solid var(--border);
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 2rem;
+      align-items: stretch;
+    }
+
+    .hero-copy,
+    .hero-card,
+    .section-card,
+    .package,
+    .project,
+    .contact-card {
+      background: var(--surface);
+      border: 1px solid var(--line);
       border-radius: var(--radius);
-      padding: 1.35rem;
-      box-shadow: 0 12px 32px rgba(52, 58, 50, 0.04);
+      box-shadow: var(--shadow);
     }
 
-    .card-tag {
+    .hero-copy {
+      padding: 2.4rem;
+    }
+
+    .eyebrow {
       display: inline-block;
+      margin-bottom: 0.9rem;
+      padding: 0.35rem 0.7rem;
+      background: rgba(90, 107, 92, 0.1);
+      color: var(--accent);
+      border-radius: 999px;
       font-size: 0.82rem;
       font-weight: 700;
-      letter-spacing: 0.04em;
-      text-transform: uppercase;
-      color: var(--sage-dark);
-      margin-bottom: 0.7rem;
+      letter-spacing: 0.02em;
     }
 
-    .journal-card {
-      background: linear-gradient(180deg, rgba(255,255,255,0.9), rgba(248,242,236,0.88));
-      border: 1px solid var(--border);
-      border-radius: 24px;
-      padding: 1.35rem;
-      box-shadow: 0 12px 26px rgba(52, 58, 50, 0.05);
-      min-height: 240px;
+    h1, h2, h3 { line-height: 1.15; margin: 0 0 1rem; }
+    h1 { font-size: clamp(2.4rem, 5vw, 4.4rem); }
+    h2 { font-size: clamp(1.8rem, 3vw, 2.6rem); }
+    h3 { font-size: 1.18rem; }
+
+    .lead {
+      font-size: 1.08rem;
+      color: var(--muted);
+      max-width: 60ch;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.85rem;
+      margin-top: 1.5rem;
+    }
+
+    .hero-meta {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0.9rem;
+      margin-top: 2rem;
+    }
+
+    .meta-item {
+      padding: 1rem;
+      border-radius: 18px;
+      background: #faf8f4;
+      border: 1px solid var(--line);
+    }
+
+    .meta-item strong {
+      display: block;
+      font-size: 1.1rem;
+      margin-bottom: 0.25rem;
+    }
+
+    .meta-item span {
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    .hero-card {
+      padding: 2rem;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
+      background: linear-gradient(180deg, #fff 0%, #f4f1ea 100%);
     }
 
-    .journal-card small {
+    .quote {
+      font-size: 1.05rem;
+      color: var(--text);
+      margin: 1.25rem 0;
+    }
+
+    .credibility {
+      padding-top: 1.25rem;
+      border-top: 1px solid var(--line);
       color: var(--muted);
-      font-weight: 600;
-      letter-spacing: 0.03em;
+      font-size: 0.95rem;
+    }
+
+    section {
+      padding: 1.4rem 0 3.5rem;
+    }
+
+    .section-head {
+      margin-bottom: 1.4rem;
+      max-width: 70ch;
+    }
+
+    .section-head p {
+      color: var(--muted);
+      margin: 0;
+    }
+
+    .section-card {
+      padding: 2rem;
+    }
+
+    .services-grid,
+    .projects-grid,
+    .packages-grid,
+    .contact-grid {
+      display: grid;
+      gap: 1rem;
+    }
+
+    .services-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .service {
+      padding: 1.35rem;
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      background: #fcfbf8;
+    }
+
+    .service p,
+    .package p,
+    .project p,
+    .section-card p {
+      color: var(--muted);
+      margin: 0;
+    }
+
+    .package,
+    .project,
+    .contact-card {
+      padding: 1.6rem;
+    }
+
+    .packages-grid {
+      grid-template-columns: repeat(3, 1fr);
+      align-items: stretch;
+    }
+
+    .package.highlight {
+      border-color: rgba(182, 132, 91, 0.5);
+      transform: translateY(-2px);
+    }
+
+    .package .price {
+      font-size: 1.65rem;
+      font-weight: 800;
+      margin: 0.35rem 0 0.8rem;
+    }
+
+    ul.clean {
+      list-style: none;
+      padding: 0;
+      margin: 1rem 0 0;
+      display: grid;
+      gap: 0.55rem;
+      color: var(--muted);
+      font-size: 0.96rem;
+    }
+
+    ul.clean li::before {
+      content: "•";
+      color: var(--accent-2);
+      margin-right: 0.6rem;
+    }
+
+    .projects-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .project small,
+    .package small {
+      display: inline-block;
+      margin-bottom: 0.65rem;
+      color: var(--accent);
+      font-weight: 700;
+      letter-spacing: 0.02em;
+      text-transform: uppercase;
+      font-size: 0.77rem;
+    }
+
+    .process {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1rem;
+      margin-top: 1.25rem;
+    }
+
+    .step {
+      padding: 1.2rem;
+      border-radius: 18px;
+      border: 1px solid var(--line);
+      background: #fcfbf8;
     }
 
     .step-number {
-      width: 38px;
-      height: 38px;
-      display: grid;
-      place-items: center;
-      border-radius: 50%;
-      background: var(--blush);
-      font-weight: 700;
+      width: 2rem;
+      height: 2rem;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 999px;
+      background: rgba(182, 132, 91, 0.14);
+      color: var(--accent-2);
+      font-weight: 800;
       margin-bottom: 0.8rem;
     }
 
-    .cta-card {
-      background: linear-gradient(135deg, rgba(156, 175, 154, 0.18), rgba(244, 198, 181, 0.2));
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 1rem;
-      margin-top: 1rem;
+    .contact-grid {
+      grid-template-columns: 1fr 1fr;
     }
 
-    .cta-copy {
-      max-width: 650px;
+    .contact-card strong {
+      display: block;
+      margin-bottom: 0.4rem;
+      font-size: 1.05rem;
     }
 
-    .footer {
+    footer {
       padding: 2rem 0 3rem;
       color: var(--muted);
+      font-size: 0.92rem;
     }
 
-    .footer-inner {
-      border-top: 1px solid rgba(47, 49, 46, 0.08);
-      padding-top: 1.5rem;
-      display: flex;
-      justify-content: space-between;
-      gap: 1rem;
-      flex-wrap: wrap;
-    }
-
-    .accent-underline {
-      position: relative;
-      display: inline-block;
-    }
-
-    .accent-underline::after {
-      content: "";
-      position: absolute;
-      left: 0;
-      right: 0;
-      bottom: 0.08em;
-      height: 0.35em;
-      background: rgba(244, 198, 181, 0.55);
-      z-index: -1;
-      border-radius: 999px;
-    }
-
-    @media (max-width: 960px) {
+    @media (max-width: 980px) {
       .hero-grid,
-      .about-grid,
-      .cards-3,
-      .journal-grid,
-      .steps-grid,
-      .pill-grid {
+      .packages-grid,
+      .projects-grid,
+      .services-grid,
+      .contact-grid,
+      .process {
         grid-template-columns: 1fr;
       }
 
-      .cta-card,
-      .section-header,
-      .footer-inner {
-        flex-direction: column;
-        align-items: flex-start;
+      .hero-meta {
+        grid-template-columns: 1fr;
       }
 
-      .hero {
-        padding-top: 3rem;
-      }
-
-      .floating-card {
-        position: static;
-        margin-top: 1rem;
-        max-width: none;
-      }
-
-      .photo-placeholder {
-        min-height: 360px;
-      }
-    }
-
-    @media (max-width: 680px) {
       .nav {
         align-items: flex-start;
         flex-direction: column;
       }
+    }
+
+    @media (max-width: 640px) {
+      .hero { padding-top: 4rem; }
+      .hero-copy,
+      .hero-card,
+      .section-card,
+      .package,
+      .project,
+      .contact-card {
+        padding: 1.35rem;
+      }
 
       .nav-links {
-        justify-content: flex-start;
-      }
-
-      h1 {
-        max-width: none;
-      }
-
-      .hero-actions {
-        width: 100%;
-      }
-
-      .button {
-        width: 100%;
+        gap: 0.75rem;
+        font-size: 0.9rem;
       }
     }
   </style>
 </head>
 <body>
-  <header class="site-header">
+  <header>
     <div class="container nav">
       <a href="#top" class="brand">
-        <div class="brand-mark">L</div>
-        <div class="brand-text">
-          <span>The Life Edit</span>
-          <span>A softer way to create real change.</span>
-        </div>
+        <strong>Lora Vietzen Small Business Support</strong>
+        <span>Small Business Support Consultant</span>
       </a>
-
       <nav class="nav-links">
+        <a href="#services">Services</a>
+        <a href="#packages">Packages</a>
+        <a href="#projects">One-Time Projects</a>
         <a href="#about">About</a>
-        <a href="#work-with-me">Work With Me</a>
-        <a href="#journal">Journal</a>
+        <a href="#contact">Contact</a>
       </nav>
     </div>
   </header>
@@ -507,280 +410,244 @@
     <section class="hero">
       <div class="container hero-grid">
         <div class="hero-copy">
-          <div class="eyebrow">Modern coaching + writing for real life growth</div>
-          <h1>Build a life that feels <span class="accent-underline">better to live</span>.</h1>
-          <p>
-            The Life Edit is a modern coaching and writing space for personal growth,
-            confidence, and meaningful change — with support that feels thoughtful,
-            practical, and real.
+          <div class="eyebrow">Practical support beyond basic marketing</div>
+          <h1>Helping small businesses run more smoothly and grow more intentionally.</h1>
+          <p class="lead">
+            Practical support for small businesses across operations, merchandising, training, customer experience, communication, and visibility.
           </p>
-
           <div class="hero-actions">
-            <a class="button primary" href="#start-here">Start Here</a>
-            <a class="button secondary" href="#journal">Read the Journal</a>
-   </div>
+            <a class="btn btn-primary" href="mailto:supportbylora@gmail.com">Book an Initial Consult</a>
+            <a class="btn btn-secondary" href="#projects">View One-Time Projects</a>
+          </div>
+          <div class="hero-meta">
+            <div class="meta-item">
+              <strong>$95</strong>
+              <span>Initial consult</span>
+            </div>
+            <div class="meta-item">
+              <strong>$150+</strong>
+              <span>One-time projects</span>
+            </div>
+            <div class="meta-item">
+              <strong>$300–$850+</strong>
+              <span>Ongoing support</span>
+            </div>
+          </div>
+        </div>
+        <aside class="hero-card">
+          <div>
+            <h3>Why work with me</h3>
+            <p class="quote">
+              My support comes from real, hands-on experience with the everyday challenges small businesses face. I focus on support that is practical, manageable, and genuinely useful.
+            </p>
+          </div>
+          <div class="credibility">
+            Backed by experience supporting 100+ franchise stores across training, merchandising, operations, communication, and customer experience.
+          </div>
+        </aside>
+      </div>
+    </section>
 
-          <p class="hero-note">
-           
+    <section id="services">
+      <div class="container">
+        <div class="section-head">
+          <h2>Services</h2>
+          <p>
+            Support can be focused in one area or tailored across several, depending on what the business needs most right now.
           </p>
         </div>
-
-        <div class="photo-card">
-  <img src="Loraphoto.jpeg" alt="Portrait of Lora for The Life Edit website" class="hero-photo">
-</div>
-
-          <div class="floating-card">
-            <strong>Start with a free consult</strong>
-            <span>
-              Fill out a short form, book a time, and see whether working together feels like a fit.
-            </span>
+        <div class="services-grid">
+          <div class="service">
+            <h3>Marketing & Visibility</h3>
+            <p>Support with content planning, promotions, community outreach, local partnership ideas, and simple customer-facing visibility.</p>
+          </div>
+          <div class="service">
+            <h3>Merchandising & Product Support</h3>
+            <p>Display recommendations, featured product planning, seasonal refresh ideas, category organization, and slow-seller visibility support.</p>
+          </div>
+          <div class="service">
+            <h3>Customer Experience & Reputation</h3>
+            <p>Review analysis, review growth strategies, customer experience improvement ideas, and practical service recommendations.</p>
+          </div>
+          <div class="service">
+            <h3>Team Training & Communication</h3>
+            <p>Customer service refreshers, sales fundamentals, onboarding tools, meeting support, and team communication resources.</p>
+          </div>
+          <div class="service">
+            <h3>Operations & Planning</h3>
+            <p>SOPs, checklists, recurring task tools, internal organization support, and practical systems to help the business run more smoothly.</p>
+          </div>
+          <div class="service">
+            <h3>Flexible Support</h3>
+            <p>One-time projects for a specific need or ongoing support for businesses that want a steady outside partner over time.</p>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="feature-band">
+    <section id="packages">
       <div class="container">
-        <div class="pill-grid">
-          <div class="pill">Thoughtful growth for real life</div>
-          <div class="pill">Confidence, clarity, and momentum</div>
-          <div class="pill">Support without harsh pressure</div>
+        <div class="section-head">
+          <h2>Ongoing Support Packages</h2>
+          <p>
+            Monthly support for businesses that want consistent help improving visibility, organization, customer experience, team support, and day-to-day operations.
+          </p>
+        </div>
+        <div class="packages-grid">
+          <article class="package">
+            <small>Essentials Support</small>
+            <div class="price">$300<span style="font-size:1rem;font-weight:600;color:var(--muted);">/month</span></div>
+            <p>Light, focused monthly support in one primary focus area.</p>
+            <ul class="clean">
+              <li>1 call, up to 45 minutes</li>
+              <li>1 primary focus area</li>
+              <li>1 simple customized deliverable</li>
+              <li>Light follow-up by email</li>
+            </ul>
+          </article>
+          <article class="package highlight">
+            <small>Growth Support</small>
+            <div class="price">$550<span style="font-size:1rem;font-weight:600;color:var(--muted);">/month</span></div>
+            <p>More active support across a few connected priorities.</p>
+            <ul class="clean">
+              <li>2 calls, up to 45 minutes each</li>
+              <li>Up to 2–3 focus areas</li>
+              <li>1–2 customized deliverables</li>
+              <li>Monthly summary included</li>
+            </ul>
+          </article>
+          <article class="package">
+            <small>Partner Support</small>
+            <div class="price">$850<span style="font-size:1rem;font-weight:600;color:var(--muted);">+</span></div>
+            <p>Broader, flexible support for businesses that want a more involved ongoing partner.</p>
+            <ul class="clean">
+              <li>Up to 4 calls, up to 45 minutes each</li>
+              <li>Multiple focus areas</li>
+              <li>2–4 deliverables or recurring support items</li>
+              <li>Priority follow-up and fuller monthly reporting</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects">
+      <div class="container">
+        <div class="section-head">
+          <h2>One-Time Projects</h2>
+          <p>
+            Focused support for businesses that want to solve one clear problem before committing to monthly help.
+          </p>
+        </div>
+        <div class="projects-grid">
+          <article class="project">
+            <small>One-Time Project</small>
+            <h3>Review & Reputation Audit</h3>
+            <p>Assessment of customer feedback, strengths, pain points, and practical ideas for improving reviews and customer experience.</p>
+          </article>
+          <article class="project">
+            <small>One-Time Project</small>
+            <h3>Merchandising Audit & Refresh Plan</h3>
+            <p>Review of current displays, product visibility, and practical recommendations for a fresher, more intentional customer experience.</p>
+          </article>
+          <article class="project">
+            <small>One-Time Project</small>
+            <h3>Customer Experience Improvement Project</h3>
+            <p>Assessment of reviews and service pain points, recommendations for improvement, and a mini customer service tool.</p>
+          </article>
+          <article class="project">
+            <small>One-Time Project</small>
+            <h3>Promotion Planning Project</h3>
+            <p>Review of current visibility efforts, one promotional plan, content or promo suggestions, and clear next-step recommendations.</p>
+          </article>
         </div>
       </div>
     </section>
 
     <section id="about">
       <div class="container">
-        <div class="section-header">
-          <div>
+        <div class="section-card">
+          <div class="section-head">
             <h2>About</h2>
-            <p class="section-copy">
-              A modern space for reflection, support, and meaningful change.
-            </p>
-          </div>
-        </div>
-
-        <div class="about-grid">
-          <div class="about-card">
-            <h3>Why I created this</h3>
             <p>
-              I created The Life Edit because I care deeply about personal growth,
-              but I do not believe it has to feel harsh, clinical, or impossible to keep up with.
-              I’m drawn to the kind of change that feels real and sustainable — the kind built through self-trust,
-              small choices, honest reflection, and practical support.
+              I offer practical business support for small businesses that want to be more organized, more intentional, and better positioned for growth.
             </p>
           </div>
-
-          <div class="about-card">
-            <h3>What you’ll find here</h3>
-            <p>
-              This is where my writing, ideas, and coaching come together. It’s a place for
-              reflections on becoming more confident, grounded, intentional, and connected to
-              the life you want to build. My hope is that what you find here helps you feel
-              understood, encouraged, and a little more sure of what’s possible for you.
-            </p>
-          </div>
+          <p>
+            I work across areas like merchandising, operations, training, customer experience, communication, promotions, and visibility. For more than two years, I’ve supported a franchise system of over 100 stores, helping owners and teams navigate the kinds of day-to-day challenges that can impact consistency, growth, and customer trust.
+          </p>
+          <p>
+            My goal is to provide thoughtful support that helps businesses run more smoothly, support their teams better, and create stronger customer experiences.
+          </p>
         </div>
       </div>
     </section>
 
-    <section id="approach">
-  <div class="container">
-    <div class="section-header">
-      <div>
-        <h2>What I Bring to This Work</h2>
-        <p class="section-copy">
-          A little more about why I do this and the foundation this work comes from.
-        </p>
-      </div>
-    </div>
-
-    <div class="about-grid">
-      <div class="about-card">
-        <h3>Why I feel called to do this</h3>
-        <p>
-          I care deeply about personal growth, but I also know how overwhelming, discouraging, and unrealistic
-          a lot of self-improvement advice can feel. So much of it sounds harsh, disconnected, or impossible to
-          sustain in real life. What I’ve always been more interested in is the kind of growth that feels honest,
-          grounded, and actually livable — the kind built through self-trust, reflection, small changes, and a real
-          desire to create a better life.
-        </p>
-      </div>
-
-      <div class="about-card">
-        <h3>Where my perspective comes from</h3>
-        <p>
-          I want to be transparent about the fact that I’m not a licensed therapist or clinical mental health
-          professional, and this work is not a substitute for therapy. What I do bring is lived experience, years
-          of personal reflection, a deep investment in these topics, and a genuine desire to help people feel more
-          clear, capable, and supported. The ideas I share here come from things I’ve actively worked through in my
-          own life — building routines, learning self-trust, becoming more independent, reflecting deeply, and trying
-          to create a life that feels more intentional and more my own.
-        </p>
-      </div>
-    </div>
-  </div>
-</section>
-
-    <section>
+    <section id="process">
       <div class="container">
-        <div class="section-header">
-          <div>
-            <h2>What I help with</h2>
-            <p class="section-copy">
-              You can customize these later to match your exact coaching focus.
-            </p>
-          </div>
+        <div class="section-head">
+          <h2>How It Works</h2>
+          <p>
+            Whether you need a one-time project or ongoing support, the process is meant to stay clear, simple, and collaborative.
+          </p>
         </div>
-
-        <div class="cards-3">
-          <article class="card">
-            <span class="card-tag">01</span>
-            <h3>Getting unstuck</h3>
-            <p>
-              Find clarity, rebuild momentum, and create movement when you feel scattered, stalled, or unsure what’s next.
-            </p>
-          </article>
-
-          <article class="card">
-            <span class="card-tag">02</span>
-            <h3>Habits and routines</h3>
-            <p>
-              Build sustainable rhythms that support your goals without turning your life into a rigid system you can’t maintain.
-            </p>
-          </article>
-
-          <article class="card">
-            <span class="card-tag">03</span>
-            <h3>Confidence and self-trust</h3>
-            <p>
-              Strengthen your relationship with yourself and grow into the version of you that feels more grounded and alive.
-            </p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section id="journal">
-      <div class="container">
-        <div class="section-header">
-          <div>
-            <h2>The Life Edit Journal</h2>
-            <p class="section-copy">
-              Reflections on growth, self-trust, and building a life that feels better to live.
-            </p>
-          </div>
-        </div>
-
-        <div class="journal-grid">
-          <article class="journal-card">
-            <div>
-              <small>Journal Entry</small>
-              <h3>You Do Not Need to Become Rigid to Change Your Life</h3>
-              <p>
-                A reflection on routines, self-respect, and building a life that feels supportive instead of punishing.
-              </p>
-            </div>
-            <a href="blog-rigid-to-change.html" style="font-weight: 700; margin-top: 1rem;">Read more →</a>
-          </article>
-
-          <article class="journal-card">
-            <div>
-              <small>Journal Entry</small>
-              <h3>Self-Trust Is Built in Small, Quiet Moments</h3>
-              <p>
-                A reflection on confidence, self-trust, and the small ways we learn we can rely on ourselves.
-              </p>
-            </div>
-            <a href="blog-self-trust.html" style="font-weight: 700; margin-top: 1rem;">Read more →</a>
-          </article>
-
-          <article class="journal-card">
-            <div>
-              <small>Coming Soon</small>
-              <h3>What It Means to Edit Your Life With Intention</h3>
-              <p>
-                More reflections, practical encouragement, and personal growth writing coming soon.
-              </p>
-            </div>
-            <a href="#" style="font-weight: 700; margin-top: 1rem;">Read more →</a>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section id="work-with-me">
-      <div class="container">
-        <div class="section-header">
-          <div>
-            <h2>Work With Me</h2>
-            <p class="section-copy">
-              Keep this simple to start. Your first version does not need a huge offer menu.
-            </p>
-          </div>
-        </div>
-
-        <div class="steps-grid">
-          <article class="card">
+        <div class="process">
+          <div class="step">
             <div class="step-number">1</div>
-            <h3>Fill out the form</h3>
-            <p>
-              Share a little about what’s bringing you here, what you want support with, and what kind of change you’re looking for.
-            </p>
-          </article>
-
-          <article class="card">
+            <h3>Initial Consult</h3>
+            <p>We talk through your business, current challenges, and what kind of support would be most helpful.</p>
+          </div>
+          <div class="step">
             <div class="step-number">2</div>
-            <h3>Book a free consult</h3>
-            <p>
-              Choose a time that works for you using your scheduling link. This can connect to your Google booking page.
-            </p>
-          </article>
-
-          <article class="card">
+            <h3>Recommendation</h3>
+            <p>I recommend a one-time project or support package based on your goals and current priorities.</p>
+          </div>
+          <div class="step">
             <div class="step-number">3</div>
-            <h3>See if it’s a fit</h3>
-            <p>
-              We’ll talk about what you’re looking for, where you feel stuck, and whether coaching together feels aligned.
-            </p>
-          </article>
+            <h3>Support Delivery</h3>
+            <p>You receive practical recommendations, tools, and deliverables that are tailored to your business.</p>
+          </div>
+          <div class="step">
+            <div class="step-number">4</div>
+            <h3>Next Steps</h3>
+            <p>At the end of a project or month, we review progress and identify the strongest next opportunities.</p>
+          </div>
         </div>
       </div>
     </section>
 
-    <section id="start-here">
+    <section id="contact">
       <div class="container">
-        <div class="cta-card">
-          <div class="cta-copy">
-            <h2>Ready to make your life feel more like your own?</h2>
-            <p>
-              Start with the form, then book a free consult. This first conversation is a simple,
-              low-pressure way to connect and explore what kind of support would feel most helpful.
-            </p>
+        <div class="section-head">
+          <h2>Let’s Connect</h2>
+          <p>
+            If your business could use practical support in one area or across several, I’d be happy to connect.
+          </p>
+        </div>
+        <div class="contact-grid">
+          <div class="contact-card">
+            <strong>Email</strong>
+            <p><a href="mailto:supportbylora@gmail.com">supportbylora@gmail.com</a></p>
           </div>
-
-          <div class="hero-actions" style="margin-top: 0;">
-            <a class="button primary" href="https://forms.gle/VJct22XE5jfTYwvw8" target="_blank" rel="noopener noreferrer">Complete the Introduction Form</a>
-            <a class="button secondary" href="https://calendar.app.google/ja5jWr4u3SyXwK9F8" target="_blank" rel="noopener noreferrer">Book a Free Consult</a>
+          <div class="contact-card">
+            <strong>Social</strong>
+            <p><a href="https://instagram.com/supportbylora" target="_blank" rel="noopener noreferrer">@supportbylora</a></p>
           </div>
         </div>
       </div>
     </section>
   </main>
 
-  <footer class="footer">
-    <div class="container footer-inner">
-      <div>
-        <strong>The Life Edit</strong>
-        <p>A softer way to create real change.</p>
-      </div>
-      <p style="font-size: 0.92rem; color: var(--muted); margin-top: 1rem;">
-  Coaching through The Life Edit is not therapy or a substitute for licensed mental health care.
-</p>
-      <div>
-        <p>© 2026 The Life Edit</p>
-      </div>
+  <footer>
+    <div class="container">
+      © <span id="year"></span> Lora Vietzen Small Business Support. All rights reserved.
     </div>
   </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
 </body>
+</html>
+
 </html>
