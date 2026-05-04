@@ -489,13 +489,16 @@
           <p class="lead">
             Practical support for small businesses across operations, merchandising, training, customer experience, communication, and visibility.
           </p>
+          <p class="tiny" style="margin-top:0.85rem; max-width:60ch; color: var(--muted);">
+            To avoid confTo avoid conflicts of interest, I’m not currently available to work with pet-related businesses.with pet-related businesses.
+          </p>
           <div class="hero-actions">
             <a class="btn btn-primary" href="#consultation">Book an Initial Consult</a>
             <a class="btn btn-secondary" href="#projects">View One-Time Projects</a>
           </div>
           <div class="hero-meta">
             <div class="meta-item">
-              <strong>Free</strong>
+              <strong>$95</strong>
               <span>Initial consult</span>
             </div>
             <div class="meta-item">
@@ -527,7 +530,7 @@
         <div class="section-head">
           <h2>Services</h2>
           <p>
-            Support can be focused in one area or tailored across several, depending on what the business needs most right now.
+            Support can be focused in one area or tailored across several, depending on what the business needs most right now. To avoid conflicts of interest, I’m not currently available to work with pet-related businesses.
           </p>
         </div>
         <div class="services-grid">
@@ -695,7 +698,7 @@
         <div class="section-head">
           <h2>Initial Consultation Request</h2>
           <p>
-            Use this form to share a little about your business and what kind of support you may be looking for. The initial consultation is $95.
+            Use this form to share a little about your business and what kind of support you may be looking for. The initial consultation is free.
           </p>
         </div>
         <div class="form-card">
@@ -749,4 +752,55 @@
       <div class="container">
         <div class="section-head">
           <h2>Contact</h2>
+          <p>
+            If you’re not ready to book a consultation yet, you can still reach out here with a question or quick note. I am not available to work with pet-related businesses.
+          </p>
+        </div>
+        <div class="forms-grid">
+          <div class="contact-card">
+            <strong>Email</strong>
+            <p><a href="mailto:supportbylora@gmail.com">supportbylora@gmail.com</a></p>
+            <br>
+            <strong>Social</strong>
+            <p><a href="https://instagram.com/supportbylora" target="_blank" rel="noopener noreferrer">@supportbylora</a></p>
+          </div>
+          <div class="form-card">
+            <form action="mailto:supportbylora@gmail.com" method="post" enctype="text/plain">
+              <div class="field-grid">
+                <div class="field">
+                  <label for="contact-name">Name</label>
+                  <input id="contact-name" name="Name" type="text" required>
+                </div>
+                <div class="field">
+                  <label for="contact-email">Email</label>
+                  <input id="contact-email" name="Email" type="email" required>
+                </div>
+                <div class="field full">
+                  <label for="contact-subject">Subject</label>
+                  <input id="contact-subject" name="Subject" type="text" required>
+                </div>
+                <div class="field full">
+                  <label for="contact-message">Message</label>
+                  <textarea id="contact-message" name="Message" required></textarea>
+                </div>
+              </div>
+              <button class="btn btn-primary" type="submit">Send Message</button>
+              <p class="form-note">For a more seamless form experience on GitHub Pages later, you can connect this to a service like Formspree and replace the form <span class="tiny">action</span> value with your custom endpoint.</p>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
 
+  <footer>
+    <div class="container">
+      © <span id="year"></span> Lora Vietzen Small Business Support. All rights reserved.
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
