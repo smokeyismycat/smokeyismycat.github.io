@@ -88,6 +88,8 @@
       font-weight: 600;
       transition: 0.2s ease;
       border: 1px solid transparent;
+      cursor: pointer;
+      font: inherit;
     }
 
     .btn-primary {
@@ -120,7 +122,8 @@
     .section-card,
     .package,
     .project,
-    .contact-card {
+    .contact-card,
+    .form-card {
       background: var(--surface);
       border: 1px solid var(--line);
       border-radius: var(--radius);
@@ -228,7 +231,8 @@
     .services-grid,
     .projects-grid,
     .packages-grid,
-    .contact-grid {
+    .contact-grid,
+    .forms-grid {
       display: grid;
       gap: 1rem;
     }
@@ -247,14 +251,16 @@
     .service p,
     .package p,
     .project p,
-    .section-card p {
+    .section-card p,
+    .form-card p {
       color: var(--muted);
       margin: 0;
     }
 
     .package,
     .project,
-    .contact-card {
+    .contact-card,
+    .form-card {
       padding: 1.6rem;
     }
 
@@ -332,7 +338,8 @@
       margin-bottom: 0.8rem;
     }
 
-    .contact-grid {
+    .contact-grid,
+    .forms-grid {
       grid-template-columns: 1fr 1fr;
     }
 
@@ -340,6 +347,69 @@
       display: block;
       margin-bottom: 0.4rem;
       font-size: 1.05rem;
+    }
+
+    form {
+      margin-top: 1rem;
+    }
+
+    .field-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.9rem;
+    }
+
+    .field {
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+      margin-bottom: 0.9rem;
+    }
+
+    .field.full {
+      grid-column: 1 / -1;
+    }
+
+    label {
+      font-size: 0.92rem;
+      font-weight: 600;
+      color: var(--text);
+    }
+
+    input,
+    select,
+    textarea {
+      width: 100%;
+      padding: 0.9rem 1rem;
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      background: #fcfbf8;
+      color: var(--text);
+      font: inherit;
+    }
+
+    textarea {
+      min-height: 140px;
+      resize: vertical;
+    }
+
+    .form-note {
+      margin-top: 0.9rem;
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+
+    .tiny {
+      font-size: 0.86rem;
+      color: var(--muted);
+    }
+
+    code.inline {
+      background: #f1ede7;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 0.15rem 0.4rem;
+      font-size: 0.85em;
     }
 
     footer {
@@ -354,6 +424,7 @@
       .projects-grid,
       .services-grid,
       .contact-grid,
+      .forms-grid,
       .process {
         grid-template-columns: 1fr;
       }
@@ -366,6 +437,10 @@
         align-items: flex-start;
         flex-direction: column;
       }
+
+      .field-grid {
+        grid-template-columns: 1fr;
+      }
     }
 
     @media (max-width: 640px) {
@@ -375,7 +450,8 @@
       .section-card,
       .package,
       .project,
-      .contact-card {
+      .contact-card,
+      .form-card {
         padding: 1.35rem;
       }
 
@@ -398,6 +474,7 @@
         <a href="#packages">Packages</a>
         <a href="#projects">One-Time Projects</a>
         <a href="#about">About</a>
+        <a href="#consultation">Consult</a>
         <a href="#contact">Contact</a>
       </nav>
     </div>
@@ -413,7 +490,7 @@
             Practical support for small businesses across operations, merchandising, training, customer experience, communication, and visibility.
           </p>
           <div class="hero-actions">
-            <a class="btn btn-primary" href="mailto:supportbylora@gmail.com">Book an Initial Consult</a>
+            <a class="btn btn-primary" href="#consultation">Book an Initial Consult</a>
             <a class="btn btn-secondary" href="#projects">View One-Time Projects</a>
           </div>
           <div class="hero-meta">
@@ -613,37 +690,63 @@
       </div>
     </section>
 
-    <section id="contact">
+    <section id="consultation">
       <div class="container">
         <div class="section-head">
-          <h2>Let’s Connect</h2>
+          <h2>Initial Consultation Request</h2>
           <p>
-            If your business could use practical support in one area or across several, I’d be happy to connect.
+            Use this form to share a little about your business and what kind of support you may be looking for. The initial consultation is $95.
           </p>
         </div>
-        <div class="contact-grid">
-          <div class="contact-card">
-            <strong>Email</strong>
-            <p><a href="mailto:supportbylora@gmail.com">supportbylora@gmail.com</a></p>
-          </div>
-          <div class="contact-card">
-            <strong>Social</strong>
-            <p><a href="https://instagram.com/supportbylora" target="_blank" rel="noopener noreferrer">@supportbylora</a></p>
-          </div>
+        <div class="form-card">
+          <p>
+            Because this is a GitHub Pages-style site, this form is currently set up as a simple email form. When submitted, it will open your visitor’s email app addressed to you with their responses filled in.
+          </p>
+          <form action="mailto:supportbylora@gmail.com" method="post" enctype="text/plain">
+            <div class="field-grid">
+              <div class="field">
+                <label for="consult-name">Name</label>
+                <input id="consult-name" name="Name" type="text" required>
+              </div>
+              <div class="field">
+                <label for="consult-email">Email</label>
+                <input id="consult-email" name="Email" type="email" required>
+              </div>
+              <div class="field">
+                <label for="business-name">Business Name</label>
+                <input id="business-name" name="Business Name" type="text">
+              </div>
+              <div class="field">
+                <label for="business-type">Business Type</label>
+                <input id="business-type" name="Business Type" type="text" placeholder="Boutique, pet store, salon, etc.">
+              </div>
+              <div class="field full">
+                <label for="support-interest">What kind of support are you interested in?</label>
+                <select id="support-interest" name="Interested In">
+                  <option value="">Select an option</option>
+                  <option>One-time project</option>
+                  <option>Ongoing monthly support</option>
+                  <option>Not sure yet</option>
+                </select>
+              </div>
+              <div class="field full">
+                <label for="biggest-challenge">What is the biggest challenge you want help with right now?</label>
+                <textarea id="biggest-challenge" name="Biggest Challenge" required></textarea>
+              </div>
+              <div class="field full">
+                <label for="goals">Anything else you want me to know before we connect?</label>
+                <textarea id="goals" name="Additional Notes"></textarea>
+              </div>
+            </div>
+            <button class="btn btn-primary" type="submit">Send Consultation Request</button>
+            <p class="form-note">If you’d rather email directly, reach out at <a href="mailto:supportbylora@gmail.com"><strong>supportbylora@gmail.com</strong></a>.</p>
+          </form>
         </div>
       </div>
     </section>
-  </main>
 
-  <footer>
-    <div class="container">
-      © <span id="year"></span> Lora Vietzen Small Business Support. All rights reserved.
-    </div>
-  </footer>
-
-  <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
-  </script>
-</body>
-</html>
+    <section id="contact">
+      <div class="container">
+        <div class="section-head">
+          <h2>Contact</h2>
 
